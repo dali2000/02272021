@@ -50,4 +50,14 @@ class Client
             echo $e->getMessage();
         }
     }
+    public function deleteClient($id){
+        try{
+            $sql= "DELETE FROM clients WHERE id = $id";
+            $query = $this->pdo->prepare(($sql));
+            $query->execute();
+            return $query;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
 }
