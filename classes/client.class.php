@@ -60,4 +60,14 @@ class Client
             echo $e->getMessage();
         }
     }
+    public function modifieClient($id){
+        try{
+            $sql = "SELECT * FROM clients WHERE id = $id";
+            $query = $this->pdo->prepare(($sql));
+            $query->execute();
+            return $query;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
 }
