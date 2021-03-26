@@ -70,4 +70,7 @@ class Client
             echo $e->getMessage();
         }
     }
+  /*  public function test{
+
+    }*/
 }
